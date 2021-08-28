@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>All Post from User</h3>
+{% for post in posts %}
+<div class="card" style="width: 28rem;">
+    <div class="card-body text-center">
+        <a href="{{ post.get_absolute_url }}"><h5 class="card-title text-uppercase">{{post.title}}</h5></a>
+        <p class="text-info mb-1">posted by Projesh Basnet on: {{post.posted_date|date:"M d, Y" }}</p>
+        <p class="card-text text-danger text-uppercase text-right mr-5">{{post.category}}</p>
+        <p class="card-text text-capitalize text-justify">{{post.synopsis}}</p>
+    </div>
+  </div>
+
+{% endfor%}
+{% endblock content %}
